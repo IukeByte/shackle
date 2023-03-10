@@ -1,6 +1,6 @@
 #!/bin/bash
-
-# takes a tinycore iso and adds custom packages to it
+#
+# shackle builder
 # written by CVFD
 #
 # depends:
@@ -56,8 +56,8 @@ sudo mv ../core.gz boot/core.gz
 cd ..
 
 # make our new iso
-mkisofs -l -J -R -V sethclinux -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -o sethclinux.iso isoext
-isohybrid -o 64 sethclinux.iso
+mkisofs -l -J -R -V shackle -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -o shackle.iso isoext
+isohybrid -o 64 shackle.iso
 
 # clean up
 cd extensions
